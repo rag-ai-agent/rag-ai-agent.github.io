@@ -1,0 +1,90 @@
+/* src/pages/Home.css */
+
+/* Container for the entire page */
+.home-container {
+    padding: 2rem;
+    background-color: #f4f4f4;
+  }
+  
+  /* Hero section with gradient background */
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0.5rem auto 0;
+  }
+  
+  /* Sections (Introduction, Outline, Links) */
+  .introduction,
+  .outline,
+  .links {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .introduction h2,
+  .outline h2,
+  .links h2 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .outline ol {
+    padding-left: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  /* Links section style */
+  .links p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .button-link {
+    display: inline-block;
+    background-color: #667eea;
+    color: #fff;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-link:hover {
+    background-color: #6f63bb; /* slightly darker or different accent */
+    text-decoration: none;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .introduction,
+    .outline,
+    .links {
+      padding: 1.5rem;
+    }
+  }
+  

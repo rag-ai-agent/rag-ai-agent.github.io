@@ -1,0 +1,33 @@
+/* src/components/Navbar.css */
+
+nav {
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: #444;
+  }
+  
+  /* Highlight the active link */
+  .active-link {
+    background-color: #555;
+    color: #f0f0f0; /* Optional, to differentiate from non-active links */
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
