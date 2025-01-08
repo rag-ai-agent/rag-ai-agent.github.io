@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tutorial-website/static/css/main.aacad90c.css",
+    "main.js": "/tutorial-website/static/js/main.28fc2cfa.js",
+    "index.html": "/tutorial-website/index.html",
+    "main.aacad90c.css.map": "/tutorial-website/static/css/main.aacad90c.css.map",
+    "main.28fc2cfa.js.map": "/tutorial-website/static/js/main.28fc2cfa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aacad90c.css",
+    "static/js/main.28fc2cfa.js"
+  ]
+}
