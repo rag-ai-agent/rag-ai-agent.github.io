@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/tutorial-website/static/css/main.aacad90c.css",
-    "main.js": "/tutorial-website/static/js/main.28fc2cfa.js",
-    "index.html": "/tutorial-website/index.html",
-    "main.aacad90c.css.map": "/tutorial-website/static/css/main.aacad90c.css.map",
-    "main.28fc2cfa.js.map": "/tutorial-website/static/js/main.28fc2cfa.js.map"
+    "main.css": "/rag-ai-agent.github.io/static/css/main.aacad90c.css",
+    "main.js": "/rag-ai-agent.github.io/static/js/main.28fc2cfa.js",
+    "index.html": "/rag-ai-agent.github.io/index.html",
+    "main.aacad90c.css.map": "/rag-ai-agent.github.io/static/css/main.aacad90c.css.map",
+    "main.28fc2cfa.js.map": "/rag-ai-agent.github.io/static/js/main.28fc2cfa.js.map"
   },
   "entrypoints": [
     "static/css/main.aacad90c.css",
