@@ -87,4 +87,51 @@
       padding: 1.5rem;
     }
   }
-  
+  /* Contact section styling (similar to .introduction, .outline, .links, etc.) */
+.contacts {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contacts h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* The grid container for three columns on desktop */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* Each box is like your other text boxes */
+.contact-box {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-box h3 {
+  margin-bottom: 0.5rem;
+}
+
+.contact-box p {
+  margin-bottom: 0.25rem;
+}
+
+.contact-box:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Media query for mobile: collapse to one column */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,36 +1,35 @@
 import React from "react";
+import CodeSnippet from "../components/CodeSnippet";
+import "./Tutorial.css"; // We'll define some new CSS here for the code box & copy button
 
 const Tutorial2 = ({ useYouTube = true }) => {
-  return (
-    <div className="container">
-      <h2>Tutorial 2</h2>
 
-      {/* Video Player */}
-      <div className="video-container">
-      {useYouTube ? (
-          <iframe
-            width = "100%"
-            height = "400"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            src="https://www.youtube.com/embed/tdNwrQvXzE0"
-            title="YouTube video"
-            frameBorder="0"
-            allowFullScreen
-          ></iframe>
-        ) : (
-          <video width="100%" height="auto" controls>
-            <source src="/Tutorial2.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        )}
-      </div>
+  const code1 = `python -m venv ai`;
 
-      <div className="text-area">
-        <h3>Sample Code</h3>
-        <textarea
-          className="code-box"
-          readOnly
-          value={`import os
+  const code2 = `vir\\Scripts\\activate.bat`;
+
+  const code3 = `source my_env/bin/activate`;
+
+  const code4 = `openai==1.52.0
+python-dotenv==1.0.1
+pypdf==5.0.1
+langchain==0.3.4
+langchain-community==0.3.3
+pinecone-client[grpc]`;
+
+  const code5 = `pip install -r requirements.txt`;
+
+  const code6 = `OPENAI_API_KEY="YOUR API KEY HERE"
+
+PINECONE_API_KEY="YOUR API KEY HERE"
+
+PINECONE_REGION="REGION"   # example: us-east-1
+
+PINECONE_CLOUD="aws"
+
+PINECONE_INDEX="index-name"   # name whatever you want`;
+
+  const code7 = `import os
 import re
 import time
 import glob
@@ -134,15 +133,121 @@ for i in tqdm(range(0, len(texts), batch_size)):
     meta = [{'text': line, 'source': meta['source'], 'page': meta['page']} for line, meta in zip(lines_batch, meta_batch)]
     to_upsert = zip(ids_batch, embeds, meta)
     # upsert to Pinecone
-    index.upsert(vectors=list(to_upsert))`}
-        />
-      </div>
+    index.upsert(vectors=list(to_upsert))`;
 
+  return (
+    <div className="container">
+      <h2>Tutorial 2 - Embedding PDFs</h2>
+
+      <br></br>
+      {/* General Information Text Box */}
       <div className="info-text">
         <h3>General Info</h3>
         <p>
-          In this tutorial, we go through explaining the process of how to make embeddings from a pdf and store them in Pinecone.
+          This tutorial will show you how to make a vector database in Pinecone by embedding pdf documents from a folder. This is going to set up a vector database that we can use for the RAG AI-agent that we will build in the next tutorial. 
         </p>
+      </div>
+      <br></br>
+
+      {/* Video Player */}
+      <div className="video-container">
+      {useYouTube ? (
+          <iframe
+            width = "100%"
+            height = "400"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            src="https://www.youtube.com/embed/ayjnHFDFLQw"
+            title="YouTube video"
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        ) : (
+          <video width="100%" height="auto" controls>
+            <source src="/Tutorial2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        )}
+      </div>
+
+      <br></br>
+      {/* General Information Text Box */}
+      <div className="info-text">
+        <h2>Create an virtual environment</h2>
+        <p>
+          Just like the last step we are going to want to create and activate the virtual environment for our project. If you are working in the same root directory, you do not have to create a new environment just make sure that the environment is actvated in your current terminal session.
+        </p>
+
+      </div>
+      
+      {/* Sample Code Text Box */}
+      <div className="text-area">
+        <h3>Create a virtual environment</h3>
+        <CodeSnippet codeText={code1} />
+      </div>
+
+      {/* Sample Code Text Box */}
+      <div className="text-area">
+        <h3>To activate for Windows</h3>
+        <CodeSnippet codeText={code2} />
+      </div>
+
+      {/* Sample Code Text Box */}
+      <div className="text-area">
+        <h3>To activate for Mac</h3>
+        <CodeSnippet codeText={code3} />
+      </div>
+
+      {/* General Information Text Box */}
+      <div className="info-text">
+        <h2>Create a requirements.txt file and install the requirements</h2>
+        <p>
+          Similar to the last step, if you are working in the same root directory, you can simply add the new packages to your old requirements.txt file. The complete file is visisble below.
+        </p>
+      </div>
+
+      {/* Sample Code Text Box */}
+      <div className="text-area">
+        <h3>requirements.txt</h3>
+        <CodeSnippet codeText={code4} />
+      </div>
+
+      <div className="info-text">
+        <p>
+          You can then easily install all the required components into your virtual environment by running the following command in your terminal.
+        </p>
+      </div>
+
+      {/* Sample Code Text Box */}
+      <div className="text-area">
+        <h3>Install Requirements</h3>
+        <CodeSnippet codeText={code5} />
+      </div>
+
+      {/* General Information Text Box */}
+      <div className="info-text">
+        <h2>Store your API key in an environment variable and Build your chatbot!</h2>
+        <p>
+        You will need to add the following sections to your .env file to enable your code to utilize pinecon API calls. <a href="https://login.pinecone.io/login?state=hKFo2SB1SGxhWTZwNVNNNVcyZF9zb1haVU0xWkh6TWF1NW1Ld6FupWxvZ2luo3RpZNkgS1Z2cnh5RFF6bk5FdTdyQm8tdkdkT29xSzB5WG5iemujY2lk2SBUOEkyaEc2Q2FaazUwT05McWhmN3h6a1I0WmhMcVM0Qw&client=T8I2hG6CaZk50ONLqhf7xzkR4ZhLqS4C&protocol=oauth2&audience=https%3A%2F%2Fus-central1-production-console.cloudfunctions.net%2Fapi%2Fv1&scope=openid%20profile%20email%20read%3Acurrent_user&redirect_uri=https%3A%2F%2Fapp.pinecone.io&sessionType=signup&response_type=code&response_mode=query&nonce=NW8wMC13OXlaRjlDNXNfSWxtWVZtdTVIYkFuRS4tV2o5dk8xSVAuck5NQQ%3D%3D&code_challenge=3eV-pnh-LqR6sJBDUgT9Uwhhx1f5AbpfMCdgZhYyU5Y&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtcmVhY3QiLCJ2ZXJzaW9uIjoiMS4xMi4xIn0%3D">Create a Pinecone account</a> and set up an index specifying the "text-embedding-3-small" model to create an index with the proper dimensions. You can grab your API key from the API Keys tab on the sidebar of the dashboard.
+        </p>
+      </div>
+
+      {/* Sample Code Text Box */}
+      <div className="text-area">
+        <h3>.env</h3>
+        <CodeSnippet codeText={code6} />
+      </div>
+
+      {/* General Information Text Box */}
+      <div className="info-text">
+        <p>
+        In this tutorial, we used an open-sourced <a href="/Introduction_to_Philosophy.pdf" download>Philosophy Textbook</a> and <a href="/World_History_Volume_1.pdf" download>History Textbook</a> which you can download through their respective links, or you can use your own documents.
+        </p>
+      </div>
+
+      {/* Sample Code Text Box */}
+      <div className="text-area">
+        <h3>chatbot.py</h3>
+        <CodeSnippet codeText={code7} />
       </div>
     </div>
   );

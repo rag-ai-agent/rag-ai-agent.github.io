@@ -1,0 +1,42 @@
+/* Container for the code box + copy button */
+.code-box-container {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+  
+  /* The text area for code display */
+  .code-box {
+    display: block;        /* ensures it takes up full width */
+    width: 100%;
+    box-sizing: border-box;
+  
+    /* We'll let JS set 'height' dynamically */
+    background-color: #eee;
+    border: 1px solid #ccc;
+    resize: none;          /* user can’t manually drag to resize */
+    font-family: "Courier New", Courier, monospace;
+    padding: 1rem;
+  }
+  
+  /* The "Copy" button in the top-right corner */
+  .copy-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  
+    background-color: #667eea;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+  
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for the button */
+  .copy-button:hover {
+    background-color: #6f63bb;
+  }
+  

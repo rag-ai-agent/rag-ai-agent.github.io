@@ -12,6 +12,7 @@ const Home = () => {
         <p>
           Learn to make custom AI solutions using your own knowledge base!
         </p>
+        <p>Created by Conor Brown, Tyler Morris, and Dr. Xiaopeng Zhao of the University of Tennessee, Knoxville</p>
       </div>
 
       {/* Introduction */}
@@ -35,6 +36,29 @@ const Home = () => {
           Each of the folders labeled parts 1-3 each have a respective 
           tutorial video to follow along.
         </ol>
+      </section>
+      
+      {/* Contact Info Section */}
+      <section className="contacts">
+        <h2>Contact Information</h2>
+        <div className="contact-grid">
+          <div className="contact-box">
+            <h3>Conor Brown</h3>
+            <p>Email: cbrow215@vols.utk.edu</p>
+            <p>Phone: (615) 339-3024</p>
+            <p>Role: Developer</p>
+          </div>
+          <div className="contact-box">
+            <h3>Tyler Morris</h3>
+            <p>Email: tmorri35@vols.utk.edu</p>
+            <p>Role: Designer</p>
+          </div>
+          <div className="contact-box">
+            <h3>Dr. Xiaopeng Zhao</h3>
+            <p>Email: xzhao9@utk.edu</p>
+            <p>Role: Project Manager</p>
+          </div>
+        </div>
       </section>
 
       {/* Links to GitHub & YouTube */}
