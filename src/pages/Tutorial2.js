@@ -213,7 +213,7 @@ for i in tqdm(range(0, len(texts), batch_size)):
 
       <div className="info-text">
         <p>
-          You can then easily install all the required components into your virtual environment by running the following command in your terminal.
+          Run the following command in your terminal.
         </p>
       </div>
 
@@ -225,7 +225,7 @@ for i in tqdm(range(0, len(texts), batch_size)):
 
       {/* General Information Text Box */}
       <div className="info-text">
-        <h2>Store your API key in an environment variable and Build your chatbot!</h2>
+        <h2>Store your new API variables in your .env file</h2>
         <p>
         You will need to add the following sections to your .env file to enable your code to utilize pinecon API calls. <a href="https://login.pinecone.io/login?state=hKFo2SB1SGxhWTZwNVNNNVcyZF9zb1haVU0xWkh6TWF1NW1Ld6FupWxvZ2luo3RpZNkgS1Z2cnh5RFF6bk5FdTdyQm8tdkdkT29xSzB5WG5iemujY2lk2SBUOEkyaEc2Q2FaazUwT05McWhmN3h6a1I0WmhMcVM0Qw&client=T8I2hG6CaZk50ONLqhf7xzkR4ZhLqS4C&protocol=oauth2&audience=https%3A%2F%2Fus-central1-production-console.cloudfunctions.net%2Fapi%2Fv1&scope=openid%20profile%20email%20read%3Acurrent_user&redirect_uri=https%3A%2F%2Fapp.pinecone.io&sessionType=signup&response_type=code&response_mode=query&nonce=NW8wMC13OXlaRjlDNXNfSWxtWVZtdTVIYkFuRS4tV2o5dk8xSVAuck5NQQ%3D%3D&code_challenge=3eV-pnh-LqR6sJBDUgT9Uwhhx1f5AbpfMCdgZhYyU5Y&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtcmVhY3QiLCJ2ZXJzaW9uIjoiMS4xMi4xIn0%3D">Create a Pinecone account</a> and set up an index specifying the "text-embedding-3-small" model to create an index with the proper dimensions. You can grab your API key from the API Keys tab on the sidebar of the dashboard.
         </p>
@@ -240,14 +240,21 @@ for i in tqdm(range(0, len(texts), batch_size)):
       {/* General Information Text Box */}
       <div className="info-text">
         <p>
-        In this tutorial, we used an open-sourced <a href="/Introduction_to_Philosophy.pdf" download>Philosophy Textbook</a> and <a href="/World_History_Volume_1.pdf" download>History Textbook</a> which you can download through their respective links, or you can use your own documents.
+        Now it is time to write the script to embed our pdfs. First lets make a directory named "docs" in your root directory. In this tutorial, we used an open-sourced <a href="/Introduction_to_Philosophy.pdf" download>Philosophy Textbook</a> and <a href="/World_History_Volume_1.pdf" download>History Textbook</a> which you can download through their respective links, or you can use your own documents. Once you have your documents gathered make sure you put them in your "docs" folder as this will give our code a bin to pull the documents from.
         </p>
       </div>
 
       {/* Sample Code Text Box */}
       <div className="text-area">
-        <h3>chatbot.py</h3>
+        <h3>ingest.py</h3>
         <CodeSnippet codeText={code7} />
+      </div>
+
+      {/* General Information Text Box */}
+      <div className="info-text">
+        <p>
+        After running your script, you should be able to see the index you created on your Pinecone dashboard is now populated! Congratualations! You are now ready for the final part of the tutorial where you will learn how to use langchain to query the database you just created to create a RAG AI-Agent.
+        </p>
       </div>
     </div>
   );

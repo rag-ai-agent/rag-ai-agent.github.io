@@ -79,7 +79,7 @@ print(response["answer"])`;
       <div className="info-text">
         <h3>General Info</h3>
         <p>
-          This tutorial covers the basics of making an AI chatbot using OpenAI's API Services. After this tutorial you will be able to make your own working chatbot. You will also familiarize the concepts of, virtual environments, environment variables, API calling, role assignment, making a chatbot with and without memory, and building simple applications. You can follow along with the following video or through the written tutorial below.
+          In this final stage of the tutorial, we will combine what we learned about making Chatbots in the first part of the tutorial and the vector database we created in the second part of this tutorial into a RAG AI system that will allow us to query the documents we have uploaded to the database.
         </p>
       </div>
       <br></br>
@@ -107,12 +107,10 @@ print(response["answer"])`;
       <br></br>
       {/* General Information Text Box */}
       <div className="info-text">
-        <h2>Create an virtual environment, and install the requirered packages</h2>
+        <h2>Create a new root directory and virtual environment</h2>
         <p>
-          We'll start by creating a virtual environment for our project to live in. Virtual environments in Python isolate project dependencies and avoid conflicts between different projects, ensuring consistent environments and easier maintenance. Additionally, using a requirements.txt file is considered a best practice because it provides a clear record of all required packages, making setups reproducible and collaboration smoother. To create and activate the virtual environment, enter the following into your terminal.
+          It is reccomended that you work from a new root directory for this project as the previous version of langchain community is incompatible with the langchain-openai and langchain-pinecone packages that we are using for this stage of the project. Once you have a new root directory set up, simply perform the same previous steps to set up and activate a new virtual environment. 
         </p>
-        <br></br>
-        <p>P.S. The virtual environment is named ai in this tutorial, but you can use any name you want.</p>
       </div>
       
       {/* Sample Code Text Box */}
@@ -137,7 +135,7 @@ print(response["answer"])`;
       <div className="info-text">
         <h2>Create a requirements.txt file and install the requirements</h2>
         <p>
-          This requirements file may be small at the moment, but as you work on larger projects with more dependencies, you will find it to be an invaluable component to your projects that will enable you to control which versions of dependencies you use. It will also make tracking which libraries need to be installed to replicate your project. Start by creating a file called requirements.txt in your root folder and putting the following requirements in it. You can then easily install all the required components into your virtual environment by running the following command in your terminal.
+          
         </p>
       </div>
 
@@ -149,7 +147,7 @@ print(response["answer"])`;
 
       <div className="info-text">
         <p>
-          You can then easily install all the required components into your virtual environment by running the following command in your terminal.
+          Run the following command in your terminal.
         </p>
       </div>
 
@@ -161,9 +159,9 @@ print(response["answer"])`;
 
       {/* General Information Text Box */}
       <div className="info-text">
-        <h2>Store your API key in an environment variable and Build your chatbot!</h2>
+        <h2>Create a new .env file and store your API Keys and target index</h2>
         <p>
-        A .env file is commonly used to store environment variables such as API keys, database credentials, or other sensitive configuration details. By keeping these values separate from the source code, you maintain security and flexibility. This approach also makes it straightforward to switch between different environments (e.g., development, testing, production) without modifying your codebase. Create a file in your root directory named .env and copy the following code into it. You are going to need to replace "YOUR API KEY HERE" with your own API key which you can get from <a href="https://login.pinecone.io/login?state=hKFo2SB1SGxhWTZwNVNNNVcyZF9zb1haVU0xWkh6TWF1NW1Ld6FupWxvZ2luo3RpZNkgS1Z2cnh5RFF6bk5FdTdyQm8tdkdkT29xSzB5WG5iemujY2lk2SBUOEkyaEc2Q2FaazUwT05McWhmN3h6a1I0WmhMcVM0Qw&client=T8I2hG6CaZk50ONLqhf7xzkR4ZhLqS4C&protocol=oauth2&audience=https%3A%2F%2Fus-central1-production-console.cloudfunctions.net%2Fapi%2Fv1&scope=openid%20profile%20email%20read%3Acurrent_user&redirect_uri=https%3A%2F%2Fapp.pinecone.io&sessionType=signup&response_type=code&response_mode=query&nonce=NW8wMC13OXlaRjlDNXNfSWxtWVZtdTVIYkFuRS4tV2o5dk8xSVAuck5NQQ%3D%3D&code_challenge=3eV-pnh-LqR6sJBDUgT9Uwhhx1f5AbpfMCdgZhYyU5Y&code_challenge_method=S256&auth0Client=eyJuYW1lIjoiYXV0aDAtcmVhY3QiLCJ2ZXJzaW9uIjoiMS4xMi4xIn0%3D">Pinecone</a>
+        Now that you have everything set up your new .env file only needs to have the api keys for your OpenAI account and Pinecone account. Additionally, you need to add the name of the index you stored your vectorized documents in from the last step of the tutorial. Make sure the index name is spelled correctly otherwise your code will not work!
         </p>
       </div>
 
@@ -176,21 +174,23 @@ print(response["answer"])`;
       {/* General Information Text Box */}
       <div className="info-text">
         <p>
-        Now, to make your chatbot, copy the following code into a file in your root directory. This code snippet demonstrates how to use environment variables and the OpenAI client to build a simple, joke-loving chatbot. By loading credentials from the .env file, the script creates a chat function that sends user input to a humorous GPT-4–like model. It then prints back witty responses in real-time until the user decides to quit. However, the chatbot has no memory.
+        You can now use the following code to create a Retrieval Augmented Generation (RAG) AI-agent. This AI-agent should be an expert on the documents you embedded earlier since through the process of RAG the AI is looking at relevant parts of the document you provided it to answer your question! This not only enables you to build highly specialized AI applications, but it also virtually eliminates hallucenations!
         </p>
       </div>
 
       {/* Sample Code Text Box */}
       <div className="text-area">
-        <h3>chatbot.py</h3>
+        <h3>rag_bot.py</h3>
         <CodeSnippet codeText={code7} />
       </div>
 
       {/* General Information Text Box */}
       <div className="info-text">
         <p>
-        To add memory we just have to make a simple change to the code, creating a list that can store memory of the previous chats.
+        Congratulations! You have completed the tutorial. Feel free to modify the code for your own puroposes. You can also try to implement the RAG AI-agent into the ui_chatbot.py we built in the first part of the tutorial to test your mastery of topics covered in this tutorial. 
         </p>
+        <br></br>
+        <p>Good Luck and Happy Developing!</p>
       </div>
 
     </div>
