@@ -29,11 +29,11 @@ const Home = () => {
       <section className="outline">
         <h2>General Rundown</h2>
         <ol>
-          <li>Building an AI Chatbot</li>
+          <li><h4>Building an AI Chatbot</h4></li>
             <ul>Discover how to set up a basic conversational agent, configure your environment, and manage necessary dependencies. You’ll learn about structuring prompts, handling user inputs, and returning meaningful AI-generated responses.</ul>
-          <li>Embedding PDFs into a Pinecone vector space</li>
+          <li><h4>Embedding PDFs into a Pinecone vector space</h4></li>
             <ul>Explore how to transform text from PDF documents into vector embeddings using Pinecone. By indexing and storing these embeddings, you’ll enable efficient similarity searches that can retrieve relevant sections of your documents in real-time.</ul>
-          <li>Building a simple RAG application using Langchain</li>
+          <li><h4>Building a simple RAG application using Langchain</h4></li>
             <ul>Learn how to combine language models with real-time retrieval capabilities. This step shows you how to build a Retrieval-Augmented Generation (RAG) system using LangChain, allowing your AI to reference stored knowledge and provide more accurate, context-aware responses.</ul>
         </ol>
       </section>
