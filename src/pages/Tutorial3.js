@@ -6,9 +6,9 @@ const Tutorial3 = ({ useYouTube = true }) => {
   
   const code1 = `python -m venv ai`;
 
-  const code2 = `vir\\Scripts\\activate.bat`;
+  const code2 = `ai\\Scripts\\activate.bat`;
 
-  const code3 = `source my_env/bin/activate`;
+  const code3 = `source ai/bin/activate`;
 
   const code4 = `python-dotenv
 langchain
